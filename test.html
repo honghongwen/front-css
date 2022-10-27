@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="wrapper__div1">HI</div>
+        <div class="wrapper__div2">HI</div>
+        <div class="wrapper__div3">HI</div>
+        <div class="wrapper__div4">HI</div>
+        <div class="wrapper__div5">HI</div>
+        <div class="wrapper__div6">HI</div>
+    </div>
+
+    <style type="text/css">
+        .wrapper>div {
+            width: 100px;
+            height: 100px;
+        }
+
+        .wrapper__div1 {
+            background-color: aqua;
+        }
+
+        .wrapper__div2 {
+            background-color: aquamarine;
+        }
+
+        .wrapper__div3 {
+            background-color: azure;
+        }
+
+        .wrapper__div4 {
+            background-color: beige;
+        }
+
+        .wrapper__div5 {
+            background-color: bisque;
+        }
+
+        .wrapper__div6 {
+            background-color: black;
+            position: absolute;
+            top: 0;
+            transition: 1.5s;
+            border-radius: 0;
+        }
+        .is-txt{
+            top: 200px;
+            background-color: aqua;
+            border-radius: 50%;
+        }
+
+        .wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 550px;
+            height: 300px;
+            position: relative;
+        }
+    </style>
+
+    <script>
+        var div6 = document.querySelector(".wrapper__div6");
+        debugger
+        let Toggle = (e) => {
+            div6.classList.toggle("is-txt");
+        }
+        div6.addEventListener("click", Toggle);
+
+    </script>
+</body>
+
+</html>

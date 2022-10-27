@@ -223,36 +223,45 @@ body {
     }
 }
 
-.is-hidden{
+.is-hidden {
     visibility: hidden;
     opacity: 0;
     position: absolute;
     transition: $transition;
 }
 
-.is-txr{
-    left: calc(100% - 400px );
+.is-txr {
+    left: calc(100% - 400px);
     transition: $transition;
     transform-origin: left;
 }
 
-.is-txl{
+.is-txl {
     left: 0;
     transition: $transition;
     transform-origin: right;
 }
 
-.is-z200{
+.is-z200 {
     z-index: 200;
     transition: $transition;
 }
 
-.is-gx{
+.is-gx {
     animation: is-gx $transition;
     -webkit-animation: is-gx $transition;
 }
 
 @keyframes is-gx {
-    0%, 10%, 100%{ width: 400px; }
-    30%, 50%{ width: 500px;}
+
+    0%,
+    10%,
+    100% {
+        width: 400px;
+    }
+
+    30%,
+    50% {
+        width: 500px;
+    }
 }

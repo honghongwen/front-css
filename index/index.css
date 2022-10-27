@@ -1,0 +1,109 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+.index-wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.index-wrapper__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200px;
+  height: 100%;
+  background-color: #151e2f;
+}
+
+.index-wrapper__logo {
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.index-wrapper__menu {
+  font-size: 14px;
+  line-height: 24px;
+  padding: 0;
+}
+
+.index-wrapper__menu li {
+  display: list-item;
+  margin-bottom: 4px;
+  position: relative;
+}
+
+.index-wrapper__menu li a {
+  padding: 10px 16px;
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.index-wrapper__menu li:hover {
+  background-color: #1a2539;
+}
+
+.index-wrapper__menu li:active {
+  background-color: #1d283c;
+}
+
+.index-wrapper__menu li:active::before {
+  content: "";
+  position: absolute;
+  background-color: #2869ff;
+  height: 100%;
+  width: 4px;
+  right: 0;
+}
+
+.index-wrapper__avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: auto;
+  padding: 16px;
+}
+
+.index-wrapper__right {
+  left: calc(100% - 200px);
+  height: 100%;
+  background-color: #101827;
+}
+/*# sourceMappingURL=index.css.map */
