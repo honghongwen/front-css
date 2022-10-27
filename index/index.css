@@ -16,13 +16,20 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-.index-wrapper {
+.wrapper {
   position: relative;
   height: 100%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
 
-.index-wrapper__left {
+.index-left {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -30,37 +37,46 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 200px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-preferred-size: 200px;
+      flex-basis: 200px;
+  max-width: 200px;
   height: 100%;
   background-color: #151e2f;
 }
 
-.index-wrapper__logo {
-  padding: 15px;
+.index-left__logo {
+  padding: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.index-wrapper__menu {
+.index-left__logo svg {
+  color: #fff;
+}
+
+.index-left__menu {
   font-size: 14px;
   line-height: 24px;
   padding: 0;
+  margin: 16px 0;
 }
 
-.index-wrapper__menu li {
+.index-left__menu li {
   display: list-item;
   margin-bottom: 4px;
   position: relative;
 }
 
-.index-wrapper__menu li a {
+.index-left__menu li a {
   padding: 10px 16px;
   text-decoration: none;
   color: #fff;
@@ -73,15 +89,19 @@ body {
           align-items: center;
 }
 
-.index-wrapper__menu li:hover {
+.index-left__menu li svg {
+  margin-right: 8px;
+}
+
+.index-left__menu li:hover {
   background-color: #1a2539;
 }
 
-.index-wrapper__menu li:active {
+.index-left__menu li:active {
   background-color: #1d283c;
 }
 
-.index-wrapper__menu li:active::before {
+.index-left__menu li:active::before {
   content: "";
   position: absolute;
   background-color: #2869ff;
@@ -90,7 +110,7 @@ body {
   right: 0;
 }
 
-.index-wrapper__avatar {
+.index-left__avatar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -101,9 +121,114 @@ body {
   padding: 16px;
 }
 
-.index-wrapper__right {
-  left: calc(100% - 200px);
+.index-avatar__img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+
+.index-avatar__img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.index-avatar__name {
+  color: #fff;
+  margin: 0 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.index-avatar__more {
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.index-right {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   height: 100%;
   background-color: #101827;
+  padding: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.index-right__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 4px;
+}
+
+.index-right__headerText {
+  color: #fff;
+  line-height: 32px;
+  font-size: 24px;
+}
+
+.index-right__headerMoon {
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: 8px;
+}
+
+.index-right__addProduct {
+  background-color: #2869ff;
+  border: none;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  height: 32px;
+  padding: 0 16px;
+  cursor: pointer;
+  line-height: 24px;
+}
+
+.index-right__addProduct:hover {
+  background-color: #6291fd;
+}
+
+.index-right__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 16px 4px;
 }
 /*# sourceMappingURL=index.css.map */
