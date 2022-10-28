@@ -91,6 +91,7 @@ body {
 
 .index-left__menu li svg {
   margin-right: 8px;
+  fill: currentColor;
 }
 
 .index-left__menu li:hover {
@@ -230,5 +231,124 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 16px 4px;
+}
+
+.index-filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-left: auto;
+}
+
+.index-filter__filter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.index-filter__filter span {
+  margin-right: 3px;
+}
+
+.actions-button {
+  height: 32px;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: #1d283c;
+  border: 1px solid #1d283c;
+  padding: 5px 8px;
+  border-radius: 5px;
+  margin-left: 8px;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.actions-button svg {
+  fill: currentColor;
+}
+
+.actions-button:hover {
+  border-color: #6291fd;
+}
+
+.actions-button:focus, .actions-button:active {
+  color: #2869ff;
+}
+
+.index-right__table {
+  overflow: auto;
+}
+
+.product-header, .product-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 4px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: -webkit-sticky;
+  position: sticky;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1d283c;
+}
+
+.product-header__item svg, .product-row__item svg {
+  fill: currentColor;
+}
+
+.tableItem {
+  padding: 8px 16px;
+  color: #fff;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.product-item__button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  margin-left: 6px;
+}
+
+.product-item__button:hover {
+  color: #6291fd;
 }
 /*# sourceMappingURL=index.css.map */

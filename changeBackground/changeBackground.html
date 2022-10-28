@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <title>Document</title>
+</head>
+
+<body class="is-dark">
+
+
+    <button class="switchScheme">
+        切换背景色
+    </button>
+
+    <p>Hello</p>
+
+
+    <style>
+        :root {
+            --background-color: #eee;
+            --color: black;
+        }
+
+        [data-theme="dark"] {
+            --background-color: black;
+            --color: #eee;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--color);
+        }
+
+        .switchScheme {}
+    </style>
+    <script>
+        var switchButton = document.querySelector(".switchScheme");
+        var body = document.querySelector("body");
+        //determines if the user has a set theme
+        var switchScheme = function switchScheme() {
+            var isDark = document.documentElement.getAttribute("data-theme");
+            debugger
+            if (isDark === "dark") {
+                document.documentElement.setAttribute("data-theme", "light");
+                return
+            }
+            document.documentElement.setAttribute("data-theme", "dark");
+        }
+
+        switchButton.addEventListener("click", switchScheme);
+    </script>
+</body>
+
+</html>

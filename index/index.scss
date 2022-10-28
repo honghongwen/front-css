@@ -6,6 +6,10 @@ $hover: #1a2539;
 $active: #1d283c;
 $active-before: #2869ff;
 
+$filter: #1d283c;
+$button-hover: #6291fd;
+$product-button: #2869ff;
+
 *,
 *::before,
 *::after {
@@ -76,6 +80,7 @@ body {
 
             svg {
                 margin-right: 8px;
+                fill: currentColor;
             }
 
             &:hover {
@@ -156,20 +161,23 @@ body {
     padding: 16px;
     display: flex;
     flex-direction: column;
+
     // 头
-    &__header{
+    &__header {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0 4px;
-        
+
     }
-    &__headerText{
+
+    &__headerText {
         color: $fff;
         line-height: 32px;
         font-size: 24px;
     }
-    &__headerMoon{
+
+    &__headerMoon {
         background-color: transparent;
         color: $fff;
         border: none;
@@ -177,8 +185,9 @@ body {
         margin-left: auto;
         margin-right: 8px;
     }
-    &__addProduct{
-        background-color: #2869ff;
+
+    &__addProduct {
+        background-color: $product-button;
         border: none;
         color: $fff;
         font-size: 14px;
@@ -188,19 +197,113 @@ body {
         cursor: pointer;
         line-height: 24px;
 
-        &:hover{
-            background-color: #6291fd;
+        &:hover {
+            background-color: $button-hover;
         }
     }
 
-    &__actions{
+    &__actions {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 16px 4px;
     }
-    &__search{
-        
+
+    &__search {}
+}
+
+.index-filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-left: auto;
+
+    &__filter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+            margin-right: 3px;
+        }
+    }
+
+}
+
+.actions-button {
+    height: 32px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: $filter;
+    border: 1px solid $filter;
+    padding: 5px 8px;
+    border-radius: 5px;
+    margin-left: 8px;
+    color: $fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        fill: currentColor;
+    }
+
+    &:hover {
+        border-color: $button-hover;
+    }
+
+    &:focus,
+    &:active {
+        color: $product-button;
+    }
+}
+
+// 产品table表头
+.index-right__table {
+    overflow: auto;
+}
+
+
+.product-header, .product-row{
+    display: flex;
+    border-radius: 4px;
+    justify-content: center;
+    // 不会随滚动条移动
+    position: sticky;
+    align-items: center;
+    background-color: $filter;
+
+    // 表格头item内的svg
+    &__item {
+        svg {
+            fill: currentColor;
+        }
+    }
+}
+
+// 每个item的样式
+.tableItem {
+    padding: 8px 16px;
+    color: $fff;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    // 撑开容器！很重要
+    flex: 1;
+}
+
+// item后面的排序按钮
+.product-item__button {
+    background-color: transparent;
+    border: none;
+    color: $fff;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 6px;
+
+    &:hover {
+        color: $button-hover;
     }
 }
