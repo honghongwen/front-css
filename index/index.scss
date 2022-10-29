@@ -7,8 +7,15 @@ $active: #1d283c;
 $active-before: #2869ff;
 
 $filter: #1d283c;
-$button-hover: #6291fd;
+$button-hover: #1e2638;
 $product-button: #2869ff;
+
+$status-font-active: #2ba972;
+$status-background-active: #2ba97233;
+$status-font-disable: #59719d;
+$status-background-disable: #59719d33;
+
+$image-background-button: #101827b3;
 
 *,
 *::before,
@@ -161,7 +168,6 @@ body {
     padding: 16px;
     display: flex;
     flex-direction: column;
-
     // 头
     &__header {
         display: flex;
@@ -210,9 +216,29 @@ body {
         padding: 16px 4px;
     }
 
-    &__search {}
+    &__search {
+        width: 300px;
+        height: 30px;
+        background-color: $active;
+        border: 1px solid $active;
+        padding: 0px 10px 0px 32px;
+        color: $fff;
+        border-radius: 5px;
+        outline: none;
+        background-size: 16px;
+        background-repeat: no-repeat;
+        background-position: left 10px center;
+        background-image: url(../image/search.svg);
+
+        &:hover,
+        &:focus {
+            border-color: $button-hover;
+            background-image: url(../image/search-blue.svg);
+        }
+    }
 }
 
+// 过滤器
 .index-filter {
     display: flex;
     flex-direction: row;
@@ -231,6 +257,7 @@ body {
 
 }
 
+// 
 .actions-button {
     height: 32px;
     font-size: 14px;
@@ -262,12 +289,37 @@ body {
 // 产品table表头
 .index-right__table {
     overflow: auto;
+    border-radius: 8px;
+
+    // 滚动条宽度
+    &::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    // 滚动条颜色
+    &::-webkit-scrollbar-thumb {
+        background: $active;
+        border-radius: 10px;
+    }
+
+    // 滚动条背景色
+    &::-webkit-scrollbar-track {
+        background: $background-right;
+        border-radius: 2px;
+    }
+
+    // 滚动条hover色
+    &::-webkit-scrollbar-thumb:hover {
+        background: #333;
+    }
+
 }
 
 
-.product-header, .product-row{
+// 产品table每行
+.product-header,
+.product-row {
     display: flex;
-    border-radius: 4px;
     justify-content: center;
     // 不会随滚动条移动
     position: sticky;
@@ -280,6 +332,10 @@ body {
             fill: currentColor;
         }
     }
+
+    &:hover {
+        background-color: $background-right;
+    }
 }
 
 // 每个item的样式
@@ -291,6 +347,15 @@ body {
     align-items: center;
     // 撑开容器！很重要
     flex: 1;
+    line-height: 20px;
+
+    img {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        margin-right: 6px;
+    }
+
 }
 
 // item后面的排序按钮
@@ -305,5 +370,148 @@ body {
 
     &:hover {
         color: $button-hover;
+    }
+}
+
+// tag
+.product-item__status {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    padding: 1px 10px;
+    border-radius: 4px;
+
+    // tag前●
+    &::before {
+        content: "";
+        width: 4px;
+        height: 4px;
+        margin-right: 4px;
+        border-radius: 50%;
+    }
+}
+
+// 启用tag
+.item-status__active {
+    background-color: $status-background-active;
+    color: $status-font-active;
+
+    &::before {
+        background-color: $status-font-active;
+    }
+}
+
+// 禁用tag
+.item-status__disable {
+    background-color: $status-background-disable;
+    color: $status-font-disable;
+
+    &::before {
+        background-color: $status-font-disable;
+    }
+}
+
+
+
+
+
+
+
+.grid-span {
+    display: none;
+}
+
+.product-image__actions {
+    display: none;
+}
+
+// 网格视图
+.index-right__grid {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    .product-header {
+        display: none;
+    }
+
+    // 每格数据
+    .product-row {
+        border-radius: 10px;
+        display: flex;
+        margin: 8px;
+        flex-direction: column;
+        width: calc(25% - 16px);
+        position: relative;
+
+
+        &:hover {
+            scale: 1.01;
+            transition: 0.3s;
+            background-color: $button-hover;
+
+            .product-image__actions {
+                display: block;
+                position: absolute;
+                right: 25px;
+                top: 20px;
+                border: none;
+                background-color: $image-background-button;
+                fill: $fff;
+                border-radius: 4px;
+                padding: 4px 4px;
+                cursor: pointer;
+            }
+        }
+
+
+    }
+
+    // 格子中每行数据
+    .tableItem {
+        &.product-item__image {
+            display: block;
+
+            img {
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+                margin-bottom: 16px;
+            }
+
+            span {
+                font-size: 18px;
+            }
+        }
+
+        &:not(.product-item__image) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            span {
+                &:not(.product-item__status) {
+                    display: inline;
+                    opacity: 0.6;
+                }
+            }
+        }
+
+        flex: 0;
+        width: 100%;
+    }
+}
+
+.animation {
+    animation: gridView .25s;
+}
+
+@keyframes gridView {
+    50% {
+        scale: 0.99;
+    }
+
+    100% {
+        scale: 1;
     }
 }
