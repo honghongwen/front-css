@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>BFC测试</title>
+</head>
+<body>
+<div id="header">
+    header
+</div>
+<div id="wrapper">
+    <div id="child1">inner</div>
+    <div id="child2">inner</div>
+</div>
+<div id="footer">
+    footer
+</div>
+</body>
+<style>
+
+    #wrapper {
+        overflow: hidden;
+    }
+
+    #child1 {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background: #a0a5a8;
+    }
+
+    #child2 {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background: #1a2539;
+    }
+
+    #footer {
+    }
+</style>
+</html>
